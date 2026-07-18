@@ -2,8 +2,29 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 /**
- * @constant {Array} DATA_EVENTOS
- * @description Fuente única de datos con información detallada de eventos, instructores y resúmenes.
+ * @typedef {Object} MinutaItem
+ * @property {string} hora - Identificador del bloque de tiempo.
+ * @property {string} tema - Título del tema a tratar.
+ * @property {string} desc - Descripción detallada del bloque.
+ */
+
+/**
+ * @typedef {Object} Evento
+ * @property {string} id - Identificador único del evento.
+ * @property {string} nombre - Nombre comercial del evento.
+ * @property {Date} fecha - Objeto Date con la fecha programada.
+ * @property {string} img - URL de la imagen principal.
+ * @property {string} desc - Descripción técnica extendida.
+ * @property {string} resumen - Breve extracto para listados.
+ * @property {string} instructor - Nombre del ponente.
+ * @property {string} instructorImg - URL de la foto del instructor.
+ * @property {MinutaItem[]} minuta - Desglose de actividades por hora.
+ */
+
+/**
+ * @component DetalleEvento
+ * @description Componente de vista detallada que renderiza la información técnica de un evento específico
+ * mediante el parámetro de URL 'id'. Incluye la descripción, minuta detallada e instructor.
  */
 export const DATA_EVENTOS = [
   {
