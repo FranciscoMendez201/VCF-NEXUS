@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Componentes de Layout y Globales
 import Navbar from './components/Navbar';
@@ -61,7 +61,7 @@ function App() {
         
         <main className="flex-1 w-full">
           <Routes>
-            <Route path="/" element={
+            <Route path="/VCF-NEXUS/" element={
               <>
                 <BannerSlider />
                 <Hero />
