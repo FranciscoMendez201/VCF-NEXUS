@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* 1. DIRECTIVA CRÍTICA PARA RECONOCER LA CLASE .DARK EN TAILWIND v4 */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --text: #6b6375;
+  --text-h: #08060d;
+  --border: #e5e4e7;
+  --code-bg: #f3f4f6;
+  
+  --heading: "Inter", sans-serif;
+  --mono: monospace;
+}
+
+/* 2. EXTENSIÓN DEL TEMA EN TAILWIND v4 */
+@theme {
+  --color-panda-purple: #7c3aed; 
+  --color-brand-dark: var(--text-h);
+  --color-brand-text: var(--text);
+  --color-brand-bg: var(--bg);
+  --color-brand-border: var(--border);
+  --color-panda-dark: #2d3142;
+  --color-panda-gray: #6b7280;
+  --color-panda-gold: #d4af37;
+
+  /* Animación para el carrusel infinito hacia la derecha */
+  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0%); }
+  }
+}
+
+/* 3. VARIABLES DINÁMICAS PARA MODO OSCURO */
+.dark {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+}
+
+/* 4. ESTILOS BASE Y RESETS */
+body {
+  margin: 0;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%; 
+  max-width: 1200px; /* Un límite máximo ideal para pantallas grandes */
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Añadimos un colchón de aire lateral para que el contenido nunca toque los bordes físicos del teléfono */
+  padding-inline: 1rem; 
+}
+
+/* Typography styles */
+h1, h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code, .counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
