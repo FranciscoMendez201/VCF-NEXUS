@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import BannerSlider from './components/BannerSlider';
 import Hero from './components/Hero';
 import Team from './components/Team'; 
+import Proyectos from './components/Proyectos'; 
 import MarkEvents from './components/MarkEvents';
 import GridProjects from './components/GridProjects';
 import Organigrama from './components/Organigrama'; 
@@ -70,6 +71,7 @@ function App() {
                 <GridProjects />
               </>
             } />
+            <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/eventos" element={<SeccionEventosPatrocinadores />} />
             <Route path="/evento/:id" element={<DetalleEvento />} />
             <Route path="/proyectos-patrocinadores/:id" element={<VistaProyectoPatrocinador />} />

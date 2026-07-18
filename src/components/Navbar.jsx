@@ -40,7 +40,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Inicio</Link>
-          <Link to="/" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Proyectos</Link>
+          <Link to="/proyectos" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Proyectos</Link>
           <Link to="/organigrama" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Organigrama</Link>
           <Link to="/articulos" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Artículos</Link>
           <Link to="/eventos" className="text-sm font-medium text-brand-text hover:text-panda-purple transition-colors">Eventos Patrocinadores</Link>
@@ -120,6 +120,17 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           }`}
         >
           Artículos
+        </Link>
+        <Link 
+          to="/articulos" 
+          onClick={() => handleMobileClick('eventos')} 
+          className={`block w-full text-center text-base font-semibold py-3 px-4 rounded-xl transition-all duration-150 active:bg-panda-purple active:text-white ${
+            clickedItem === 'eventos' 
+              ? 'bg-panda-purple text-white!' 
+              : 'text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/60'
+          }`}
+        >
+          Eventos Patrocinadores
         </Link>
         
         <button className="sm:hidden w-full mt-3 px-4 py-3 bg-panda-purple text-white text-sm font-bold rounded-xl active:bg-purple-800 active:scale-[0.98] transition-all cursor-pointer text-center">
