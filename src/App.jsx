@@ -61,7 +61,7 @@ function App() {
         
         <main className="flex-1 w-full">
           <Routes>
-            <Route path="/VCF-NEXUS/" element={
+            <Route path="/" element={
               <>
                 <BannerSlider />
                 <Hero />
