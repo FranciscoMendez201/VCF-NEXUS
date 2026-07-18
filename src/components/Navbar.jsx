@@ -122,7 +122,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           Artículos
         </Link>
         <Link 
-          to="/articulos" 
+          to="/eventos" 
           onClick={() => handleMobileClick('eventos')} 
           className={`block w-full text-center text-base font-semibold py-3 px-4 rounded-xl transition-all duration-150 active:bg-panda-purple active:text-white ${
             clickedItem === 'eventos' 
