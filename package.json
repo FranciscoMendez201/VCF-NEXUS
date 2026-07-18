@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://franciscomendez201.github.io/VCF-NEXUS/organigrama",
+  "homepage": "https://franciscomendez201.github.io/VCF-NEXUS/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
